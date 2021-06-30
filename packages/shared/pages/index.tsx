@@ -1,33 +1,36 @@
-import { css } from '@emotion/css'
-
-const styles = {
-  richtext: css`
-    h2 {
-      border: 2px solid red;
-    }
-    p {
-      border: 2px solid blue;
-    }
-  `
-}
+import { HeadingA } from '../components/HeadingA'
+import { HeadingB } from '../components/HeadingB'
+import { Label } from '../components/Label'
+import { LetterBlock } from '../components/LetterBlock'
 
 export default function Home() {
   return (
     <div className="px-12 py-8">
-      <h1 className="font-bold text-xl pb-2">Shared package</h1>
-      <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </p>
-      <div className={styles.richtext}>
-        <h2>The quick brown fox jumps over the lazy dog. </h2>
-        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </p>
-        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </p>
-        <p>The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. </p>
-      </div>
+      <Label>HeadingA</Label>
+      <HeadingA>HeadingA</HeadingA>
+      <Label>HeadingB</Label>
+      <HeadingB>HeadingB</HeadingB>
+      <Label>LetterBlock</Label>
+      <LetterBlock html={`
+        <ul>
+          <li>彼は背後にひそかな</li>
+          <li>足音を聞いた。</li>
+          <li>それはあまり</li>
+          <li>良い意味を示すものではない。</li>
+          <li>彼は背後にひそかな</li>
+          <li>足音を聞いた。</li>
+          <li>それはあまり</li>
+          <li>良い意味を示すものではない。</li>
+        </ul>
+      `} />
+      {/*
       <div className="w-[80px] h-[80px] inline-block bg-my-orange"></div>
       <div className="w-[80px] h-[80px] inline-block bg-my-orange2"></div>
       <div className="w-[80px] h-[80px] inline-block bg-my-red"></div>
       <div className="w-[80px] h-[80px] inline-block bg-my-teal"></div>
       <div className="w-[80px] h-[80px] inline-block bg-my-teal2"></div>
       <div className="w-[80px] h-[80px] inline-block bg-my-teal3"></div>
+      */}
     </div>
   )
 }
